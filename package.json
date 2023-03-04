@@ -1,6 +1,6 @@
 {
-  "name": "hsm-guess-game",
-  "version": "1.0.0",
+  "name": "hsm-guessing-game",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",

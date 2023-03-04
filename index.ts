@@ -1,5 +1,6 @@
 #! /usr/bin/env node
- console.clear();
+
+console.clear();
 
 import inquirer from "inquirer";
 import chalkAnimation from "chalk-animation";
