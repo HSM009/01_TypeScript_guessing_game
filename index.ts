@@ -76,10 +76,5 @@ do{
     )
 ;
 
-}while((re.restart == 'Y' || re.restart == 'y'))
-
-
-// let a:number ;
-//  a = Math.floor(Math.random()*10)+ 1;
-//  console.log(a);
+}while((re.restart == 'Y' || re.restart == 'y'));
 
