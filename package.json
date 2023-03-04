@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "chalk-animation": "^2.0.3",
+    "hsm-guessing-game": "^1.0.1",
     "inquirer": "^8.2.5"
   }
 }
