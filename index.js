@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 console.clear();
 import inquirer from "inquirer";
+import chalk from "chalk";
 import chalkAnimation from "chalk-animation";
 const stopTime = () => {
     return new Promise((res) => {
@@ -8,7 +9,7 @@ const stopTime = () => {
     });
 };
 async function welcome() {
-    let rainbowTitle = chalkAnimation.neon("Let's play Number Guessing Game!\n\nCoded By Hosein Sirat Mohammad\n");
+    let rainbowTitle = chalkAnimation.neon(chalk.cyan("Let's play Number Guessing Game!\n\nCoded By Hosein Sirat Mohammad\n"));
     await stopTime();
     rainbowTitle.stop();
 }
@@ -19,20 +20,20 @@ async function ask() {
         .prompt([
         /* Pass your questions in here */
         {
-            type: "number",
+            type: "input",
             name: "num",
             message: "Guess the number between 1-10?",
             validate: function (value) {
-                if (Number.isInteger(value)) {
+                if (!isNaN(value)) {
                     if (value > 10) {
-                        return "Must input numbers between 1 - 10.";
+                        return chalk.bgRedBright("Must input numbers between 1 - 10.");
                     }
                     else {
                         return true;
                     }
                 }
                 else {
-                    return "Incorrect Input. Must type number.";
+                    return chalk.bgRedBright("Incorrect Input. Must type number.");
                 }
                 ;
             },
@@ -40,10 +41,10 @@ async function ask() {
     ])
         .then((answers) => {
         if (val == answers.num) {
-            console.log("You have guessed correct number.");
+            console.log(chalk.greenBright("You have guessed correct number."));
         }
         else {
-            console.log("You failed. Correct number is " + val + ". Try again later.");
+            console.log(chalk.redBright("You failed. Correct number is " + val + ". Try again later."));
         }
     });
 }
@@ -51,10 +52,9 @@ do {
     await ask();
     var re = await inquirer.prompt([
         {
-            type: "input",
+            type: "confirm",
             name: "restart",
-            message: "Do you like to restart program? Y/N",
-            default: "Y"
+            message: "\nDo you like to restart program?",
         }
     ]);
-} while ((re.restart == 'Y' || re.restart == 'y'));
+} while (re.restart == true);

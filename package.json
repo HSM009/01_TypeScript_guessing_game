@@ -1,6 +1,6 @@
 {
   "name": "hsm-guessing-game",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -12,11 +12,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/chalk-animation": "^1.6.1",
     "@types/inquirer": "^8.2.6",
     "@types/node": "^18.14.5"
   },
   "dependencies": {
+    "chalk": "^5.2.0",
     "chalk-animation": "^2.0.3",
     "hsm-guessing-game": "^1.0.1",
     "inquirer": "^8.2.5"
